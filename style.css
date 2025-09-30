@@ -1,0 +1,75 @@
+/* Basic styling for practicals index */
+
+:root {
+
+    --clr-bg-dark: #1e1e55;
+
+    --clr-txt-light: #fefefe;
+
+    --clr-accent: #ff5500;
+
+}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: sans-serif;
+
+    min-height: 100vh;
+}
+
+/* Typography */
+
+h2 {
+    padding-bottom: 1rem;
+}
+
+/* Layout */
+
+header, footer {
+    width: 100%;
+    text-align: center;
+
+        padding: 1rem;
+
+    color: var(--clr-txt-light);
+    background-color: var(--clr-bg-dark);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+}
+
+footer a{
+
+    color: white;
+
+}
+
+main {
+    margin: 5%;
+
+    display: grid;
+    gap: 2rem;
+}
+
+.three-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+@media screen and (min-width: 900px) {
+    .three-grid {
+        grid-template-columns: 1fr 1fr;
+    } 
+}
+
+@media screen and (min-width: 1200px){
+    .three-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
