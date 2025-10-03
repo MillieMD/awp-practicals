@@ -47,6 +47,7 @@ footer {
 footer a{
 
     color: white;
+    padding: 2rem;
 
 }
 
@@ -72,4 +73,19 @@ main {
     .three-grid {
         grid-template-columns: 1fr 1fr 1fr;
     }
+}
+
+/* Icons */
+
+.info-icon::before, .brightspace-icon::before {
+    width: 16px;
+    display: inline-block;
+}
+
+.info-icon::before {
+    content: url("/img/icons/circle-info-solid-full.svg");
+}
+
+.brightspace-icon::before {
+    content: url("/img/icons/graduation-cap-solid-full.svg");
 }
