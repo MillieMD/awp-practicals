@@ -21,6 +21,7 @@
     // See <head>
 
     echo "<h1>Welcome to PHP</h1>";
+    echo "<p><a href = '/'> Back </a> </p>";
 
 
     // 2. Uncomment the following three PHP variables.

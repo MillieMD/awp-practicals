@@ -59,6 +59,10 @@
 
         public function setFirstName($firstName){
 
+            if(strlen($firstName) < 1){
+                throw new InvalidArgumentException("First name may not be blank. Expected atleast 1 character");
+            }
+
             if(!ctype_alpha($firstName)){
                 throw new InvalidArgumentException("First name may only contain letters.");
             }
@@ -67,6 +71,10 @@
         }
 
         public function setLastName($lastName){
+
+            if(strlen($lastName) < 1){
+                throw new InvalidArgumentException("Last name may not be blank. Expected atleast 1 character");
+            }
 
             if(!ctype_alpha($lastName)){
                 throw new InvalidArgumentException("Last name may only contain letters.");
@@ -81,6 +89,10 @@
         }
     }
 
+    echo("<h1> Introduction to OOP PHP </h1>");
+    echo ("<p><a href = '/'> Back </a></p>");
+
+
     $exampleStudent = new Student("u0123456", "John", "Smith");
     var_dump($exampleStudent);
 
@@ -91,11 +103,10 @@ b) Add an additional line of code that will call the getFullname method.
 c) Add some additional code to create a second student object. Use var_dump() to check this also works
 */
 
-echo "<p> Full name: {$exampleStudent->getFullName()}</p>";
+    echo "<p> Full name: {$exampleStudent->getFullName()}</p>";
 
-$studentB = new Student("u2250541", "Millie", "MD");
-
-var_dump($studentB);
+    $studentB = new Student("u2250541", "Millie", "MD");
+    var_dump($studentB);
 
 
     /*
@@ -105,22 +116,21 @@ Again, once this works add some additional code to create a second student objec
 */
 
 
-$exampleStudent = new Student("u0123456", "John", "Smith");
-echo "<p>{$exampleStudent->getFullName()}</p>";
-
-
+    $exampleStudent = new Student("u0123456", "John", "Smith");
+    echo "<p>{$exampleStudent->getFullName()}</p>";
 
     /*
 3) The following code creates several instances of Student and stores them in an array. 
 Uncomment the code and add a foreach loop that will output each student's name in turn. 
 */
 
-
     $students=[];
     $students[]= new Student("u0123456", "John", "Smith");
     $students[]= new Student("u0123456", "Ruhksar", "Mirza");
     $students[]= new Student("u0123456", "Ania", "Kowalski");
     $students[] = $studentB;
+
+    echo "<p> For each loop: </p>";   
 
     foreach($students as $s){
         echo ("<p> {$s->getFullName()}</p>");
@@ -134,7 +144,10 @@ b) Add an additional method to the StudentPrinter class, name it printStudentsAs
 This method should output the array of students as an HTML list. Check this works by calling the printStudentsAsList() method.
 */
 
+echo "<p> StudentPrinter::printStudents(): </p>";
 StudentPrinter::printStudents($students);
+
+echo "<p> StudentPrinter::printStudentsAsList(): </p>";
 StudentPrinter::printStudentsAsList($students);
 
     /*
